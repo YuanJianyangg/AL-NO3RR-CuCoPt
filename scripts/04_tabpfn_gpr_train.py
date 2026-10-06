@@ -86,12 +86,8 @@ class MultiOutputFusedTabPFN(RegressorMixin, BaseEstimator):
         self.selectivity_model_ = clone(base_gp_model)
         self.selectivity_model_.fit(fused_features, selectivity_y)
 
-        conversion_X = np.hstack(
-            [fused_features, np.array(Y.iloc[:, 1]).reshape(-1, 1)]
-        )
-
         self.conversion_model_ = clone(base_gp_model)
-        self.conversion_model_.fit(conversion_X, conversion_y)
+        self.conversion_model_.fit(fused_features, conversion_y)
 
         return self
 
@@ -116,9 +112,8 @@ class MultiOutputFusedTabPFN(RegressorMixin, BaseEstimator):
         means[:, 1] = mean
         stds[:, 1] = std
 
-        X_gp_with_pred = np.hstack([fused_features, mean.reshape(-1, 1)])
         mean, std = self.conversion_model_.predict(
-            X_gp_with_pred,
+            fused_features,
             return_std=True,
         )
         means[:, 0] = mean
