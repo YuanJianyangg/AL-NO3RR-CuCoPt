@@ -1,4 +1,4 @@
-# Code Availability: Prior-informed active learning discovers a Cu–Co–Pt reactive center for nitrate-to-ammonia electroreduction
+# Code Availability: Single-Atom Pt Couples Reactive-Hydrogen Generation with NOx Hydrogenation in Active-Learning-Discovered Cu–Co–Pt Ensembles
 
 This repository contains the data files and Python scripts used for composition-space generation, descriptor calculation, TabPFN-GPR modelling, baseline benchmarking, active-learning acquisition, and SHAP-based model interpretation for "Prior-informed active learning discovers a Cu–Co–Pt reactive center for nitrate-to-ammonia electroreduction".
 
