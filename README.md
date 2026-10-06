@@ -1,6 +1,6 @@
 # Code Availability: Single-Atom Pt Couples Reactive-Hydrogen Generation with NOx Hydrogenation in Active-Learning-Discovered Cu–Co–Pt Ensembles
 
-This repository contains the data files and Python scripts used for composition-space generation, descriptor calculation, TabPFN-GPR modelling, baseline benchmarking, active-learning acquisition, and SHAP-based model interpretation for "Prior-informed active learning discovers a Cu–Co–Pt reactive center for nitrate-to-ammonia electroreduction".
+This repository contains the data files and Python scripts used for composition-space generation, descriptor calculation, TabPFN-GPR modelling, baseline benchmarking, active-learning acquisition, and SHAP-based model interpretation for "Single-Atom Pt Couples Reactive-Hydrogen Generation with NOx Hydrogenation in Active-Learning-Discovered Cu–Co–Pt Ensembles".
 
 The TabPFN-GPR model concatenates embeddings from two target-specific TabPFN regressors. Both GPR regressors use these fused embeddings to predict `Conversion` and `Selectivity`, respectively, and provide predictive standard deviations.
 
