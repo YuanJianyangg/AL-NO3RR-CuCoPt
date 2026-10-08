@@ -2,7 +2,7 @@
 
 This repository contains the data files and Python scripts used for composition-space generation, descriptor calculation, TabPFN-GPR modelling, baseline benchmarking, active-learning acquisition, and SHAP-based model interpretation for "Single-Atom Pt Couples Reactive-Hydrogen Generation with NOx Hydrogenation in Active-Learning-Discovered Cu–Co–Pt Ensembles".
 
-The TabPFN-GPR model concatenates embeddings from two target-specific TabPFN regressors. Both GPR regressors use these fused embeddings to predict `Conversion` and `Selectivity`, respectively, and provide predictive standard deviations.
+The TabPFN-GPR model concatenates embeddings from two target-specific TabPFN regressors. GPR models use the fused representation to predict `Conversion` and `Selectivity` and provide predictive standard deviations.
 
 ## Data
 

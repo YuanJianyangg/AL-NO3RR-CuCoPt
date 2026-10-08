@@ -145,8 +145,10 @@ class MultiOutputFusedTabPFNGPRRegressor(BaseEstimator, RegressorMixin):
         self.selectivity_model_ = clone(base_gp)
         self.selectivity_model_.fit(fused_features, y_selectivity)
 
+        conversion_X = np.hstack([fused_features, y_selectivity.reshape(-1, 1)])
+
         self.conversion_model_ = clone(base_gp)
-        self.conversion_model_.fit(fused_features, y_conversion)
+        self.conversion_model_.fit(conversion_X, y_conversion)
 
         return self
 
@@ -164,7 +166,8 @@ class MultiOutputFusedTabPFNGPRRegressor(BaseEstimator, RegressorMixin):
         fused_features = np.concatenate(test_embeddings, axis=1)
 
         pred_selectivity = self.selectivity_model_.predict(fused_features)
-        pred_conversion = self.conversion_model_.predict(fused_features)
+        conversion_X = np.hstack([fused_features, pred_selectivity.reshape(-1, 1)])
+        pred_conversion = self.conversion_model_.predict(conversion_X)
 
         pred_scaled = np.column_stack([pred_conversion, pred_selectivity])
 
